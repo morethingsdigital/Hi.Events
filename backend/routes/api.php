@@ -111,6 +111,10 @@ use Illuminate\Routing\Router;
 /** @var Router|Router $router */
 $router = app()->get('router');
 
+$router->get('/', function () {
+    return response()->json(['message' => 'HiEvents API']);
+});
+
 $router->prefix('/auth')->group(
     function (Router $router): void {
         $router->post('/login', LoginAction::class)->name('login');
