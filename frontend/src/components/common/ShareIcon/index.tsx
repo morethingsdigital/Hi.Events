@@ -50,7 +50,7 @@ export const ShareComponent = ({title, text, url}: ShareComponentProps) => {
         >
             <Popover.Target>
                 <Button variant={'transparent'} leftSection={<IconShare size={20}/>} onClick={handleShareClick}>
-                    {t`Share`}
+                    Share
                 </Button>
             </Popover.Target>
 
