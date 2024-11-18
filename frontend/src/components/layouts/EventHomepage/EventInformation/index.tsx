@@ -37,7 +37,7 @@ export const EventInformation: FC<{
             <h1 className={classes.eventTitle}>{event.title}</h1>
             <div className={classes.eventInfo}>
                 <div className={classes.eventDetail}>
-                    <h2>{t`Date & Time`}</h2>
+                    <h2>Datum und Uhrzeit</h2>
                     <div className={classes.details}>
                         <IconCalendar size={20}/>
                         <div>
@@ -48,7 +48,7 @@ export const EventInformation: FC<{
 
                 {event.settings?.location_details && (
                     <div className={classes.eventDetail}>
-                        <h2>{t`Location`}</h2>
+                        <h2>Ort der Veranstaltung</h2>
                         <div className={classes.details}>
                             <IconMapPin size={25}/>
                             <div className={classes.detail}>
