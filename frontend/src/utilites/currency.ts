@@ -1,5 +1,5 @@
 export const formatCurrency = (value: number | string, currency = 'USD') => {
-    const formatter = new Intl.NumberFormat('en-US', {
+    const formatter = new Intl.NumberFormat('de-DE', {
         style: 'currency',
         currency: currency,
         minimumFractionDigits: 2,
