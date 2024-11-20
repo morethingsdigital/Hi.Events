@@ -275,6 +275,7 @@ export interface TicketPrice {
     sale_start_date?: string | Date;
     sale_end_date?: string | Date;
     price_including_taxes_and_fees?: number;
+    price_including_taxes?: number;
     price_before_discount?: number;
     is_discounted?: boolean;
     tax_total?: number;
