@@ -54,12 +54,12 @@ export const TicketPriceDisplay: React.FC<TicketPriceProps> = ({
                                                                    freeLabel,
                                                                    taxAndServiceFeeDisplayType = 'exclusive',
                                                                }) => {
-    let displayPrice = price.price_including_taxes || price.price;
+    let displayPrice = price.price;
     const totalTaxAndFees = price.fee_total || 0;
 
     // Order taxes and service fees for display
     const orderedFees = [...(ticket.taxes || [])].sort((a, b) => a.type.localeCompare(b.type));
-    // const feeDescriptions = orderedFees.map(fee => fee.name).join(', ');
+    const feeDescriptions = orderedFees.map(fee => fee.name).join(', ');
 
     const getTextAppendage = () => {
         if (taxAndServiceFeeDisplayType === 'INCLUSIVE') {
@@ -67,7 +67,7 @@ export const TicketPriceDisplay: React.FC<TicketPriceProps> = ({
             return `incl. Online-Gebühren`;
         } else {
             const formattedFees = formatCurrency(totalTaxAndFees, currency);
-            return `excl. ${formattedFees} Online-Gebühren`;
+            return `excl. ${formattedFees} ${feeDescriptions}`;
         }
     };
 
