@@ -13,7 +13,7 @@ class Currency
         return $formatter->formatCurrency($amount, $currencyCode);
     }
 
-    public static function round(float $value, $precision = 1): float
+    public static function round(float $value, $precision = 2): float
     {
         return round(
             num: $value,
