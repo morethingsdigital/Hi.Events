@@ -38,7 +38,7 @@ class TaxAndFeeCalculationService
             ?->sum(fn($taxOrFee) => $this->calculateFee($taxOrFee, $price, $quantity)) ?: 0.00;
 
         $taxFees = $ticket->getTaxRates()
-            ?->sum(fn($taxOrFee) => $this->calculateFee($taxOrFee, $price + $fees, $quantity));
+            ?->sum(fn($taxOrFee) => $this->calculateFee($taxOrFee, $price, $quantity));
 
         return new TaxCalculationResponse(
             feeTotal: $fees ? ($fees * $quantity) : 0.00,
