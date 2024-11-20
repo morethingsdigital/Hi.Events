@@ -55,7 +55,7 @@ export const TicketPriceDisplay: React.FC<TicketPriceProps> = ({
                                                                    taxAndServiceFeeDisplayType = 'exclusive',
                                                                }) => {
     let displayPrice = price.price;
-    const totalTaxAndFees = price.fee_total || 0;
+    const totalTaxAndFees = (price.tax_total || 0) + (price.fee_total || 0);
 
     // Order taxes and service fees for display
     const orderedFees = [...(ticket.taxes || [])].sort((a, b) => a.type.localeCompare(b.type));
