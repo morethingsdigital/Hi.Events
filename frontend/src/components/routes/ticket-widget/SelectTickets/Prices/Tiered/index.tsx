@@ -15,7 +15,6 @@ interface TieredPricingProps {
 }
 
 export const TieredPricing = ({ticket, event, form, ticketIndex}: TieredPricingProps) => {
-    console.log({ticket});
     const sharedValues = new SharedValues(Math.min(ticket.max_per_order ?? 100, ticket.quantity_available ?? 10000));
     return (
         <>
