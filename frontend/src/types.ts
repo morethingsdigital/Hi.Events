@@ -322,6 +322,7 @@ export interface Ticket {
     tax_total?: number;
     service_fee_total?: number;
     price_including_taxes_and_fees?: number;
+    price_including_taxes?: number;
     tax_and_fee_ids?: IdParam[];
     taxes_and_fees?: TaxAndFee[];
     is_hidden?: boolean;

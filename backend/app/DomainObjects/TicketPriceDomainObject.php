@@ -59,6 +59,11 @@ class TicketPriceDomainObject extends Generated\TicketPriceDomainObjectAbstract
         return Currency::round($this->getPrice() + $this->getTaxTotal() + $this->getFeeTotal());
     }
 
+    public function getPriceIncludingTax(): float
+    {
+        return Currency::round($this->getPrice() + $this->getTaxTotal());
+    }
+
     public function isBeforeSaleStartDate(): bool
     {
         return (!is_null($this->getSaleStartDate())

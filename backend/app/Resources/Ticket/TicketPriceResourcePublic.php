@@ -22,6 +22,7 @@ class TicketPriceResourcePublic extends BaseResource
             'sale_start_date' => $this->getSaleStartDate(),
             'sale_end_date' => $this->getSaleEndDate(),
             'price_including_taxes_and_fees' => $this->getPriceIncludingTaxAndServiceFee(),
+            'price_including_taxes' => $this->getPriceIncludingTax(),
             'price_before_discount' => $this->getPriceBeforeDiscount(),
             'is_discounted' => (bool)$this->getPriceBeforeDiscount(),
             'tax_total' => $this->getTaxTotal(),

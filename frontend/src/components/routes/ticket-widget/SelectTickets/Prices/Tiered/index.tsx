@@ -48,7 +48,7 @@ export const TieredPricing = ({ticket, event, form, ticketIndex}: TieredPricingP
                                     )}
                                     {ticket.type !== 'DONATION' && (
                                         <TicketPriceDisplay
-                                            price={ticket.price_before_discount + ticket.tax_total}
+                                            price={ticket.price_including_taxes}
                                             ticket={ticket}
                                             currency={event?.currency}
                                             className={'hi-price-tier-price-amount'}
