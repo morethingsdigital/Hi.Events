@@ -64,10 +64,10 @@ export const TicketPriceDisplay: React.FC<TicketPriceProps> = ({
     const getTextAppendage = () => {
         if (taxAndServiceFeeDisplayType === 'INCLUSIVE') {
             displayPrice += totalTaxAndFees;
-            return `incl. Online-Gebühren`;
+            return `enthält ${feeDescriptions}`;
         } else {
             const formattedFees = formatCurrency(totalTaxAndFees, currency);
-            return `excl. ${formattedFees} ${feeDescriptions}`;
+            return `zuzüglich ${formattedFees} ${feeDescriptions}`;
         }
     };
 
