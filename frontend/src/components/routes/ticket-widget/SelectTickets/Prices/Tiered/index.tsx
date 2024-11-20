@@ -15,8 +15,8 @@ interface TieredPricingProps {
 }
 
 export const TieredPricing = ({ticket, event, form, ticketIndex}: TieredPricingProps) => {
+    console.log({ticket});
     const sharedValues = new SharedValues(Math.min(ticket.max_per_order ?? 100, ticket.quantity_available ?? 10000));
-    console.log(ticket);
     return (
         <>
             {ticket?.prices?.map((price, index) => {
@@ -48,7 +48,7 @@ export const TieredPricing = ({ticket, event, form, ticketIndex}: TieredPricingP
                                     )}
                                     {ticket.type !== 'DONATION' && (
                                         <TicketPriceDisplay
-                                            price={price_including_taxes}
+                                            price={price}
                                             ticket={ticket}
                                             currency={event?.currency}
                                             className={'hi-price-tier-price-amount'}
