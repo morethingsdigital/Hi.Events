@@ -12,6 +12,7 @@ const Root = () => {
     useEffect(() => {
         if (me.isFetched) {
             // TODO: This is hacky, i know
+            console.log(me.isSuccess, me.isSuccess ? "/manage/events" : "/event/1/snow-sound-2024")
             setRedirectPath(me.isSuccess ? "/manage/events" : "/event/1/snow-sound-2024");
         }
     }, [me.isFetched]);
