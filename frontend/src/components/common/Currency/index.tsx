@@ -92,7 +92,7 @@ export const TicketPriceDisplay: React.FC<TicketPriceProps> = ({
 
     return (
         <div className={className}>
-            <div>{formattedPrice}</div>
+            <div>{formattedPrice} <small>(inkl. aller Steuern und Gebühren)</small></div>
             <div>{appendedText}</div>
         </div>
     );
