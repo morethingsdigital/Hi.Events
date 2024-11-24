@@ -122,17 +122,30 @@
     }
   }
 
+  .sponsorBlock {
+    padding: 20px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
   .sponsorImagesWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+  }
+
+  .sponsorImageElement {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-bottom: 20px;
   }
 
   .sponsorImage {
     width: 100%;
     height: auto;
     display: block;
-    flex-wrap: nowrap;
   }
 }

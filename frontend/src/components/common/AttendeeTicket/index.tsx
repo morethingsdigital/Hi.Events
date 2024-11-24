@@ -92,13 +92,22 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                 </div>
             </Card>
             <Card className={classes.attendee}>
-                <h2>Mit freundlicher Unterstützung von:</h2>
-                <div className={classes.sponsorImagesWrapper}>
-                    <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
-                    <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
-                    <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
-                    <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
-                    <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
+                <div>
+                    <h2>Mit freundlicher Unterstützung von:</h2>
+                    <div className={classes.sponsorImagesWrapper}>
+                        <div className={classes.sponsorImageElement}>
+                            <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
+                        </div>
+                        <div className={classes.sponsorImageElement}>
+                            <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
+                        </div>
+                        <div className={classes.sponsorImageElement}>
+                            <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
+                        </div>
+                        <div className={classes.sponsorImageElement}>
+                            <img className={classes.sponsorImage} src={"https://placehold.co/600x400/000000/FFF"}/>
+                        </div>
+                    </div>
                 </div>
             </Card>
         </>
