@@ -13,8 +13,6 @@ const Root = () => {
         if (me.isFetched) {
             // TODO: This is hacky, i know
             setRedirectPath(me.isSuccess ? "/manage/events" : "/auth/login");
-        } else {
-            setRedirectPath("/event/1/snow-sound-2024");
         }
     }, [me.isFetched]);
 
