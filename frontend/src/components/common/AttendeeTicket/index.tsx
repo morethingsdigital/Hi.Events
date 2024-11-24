@@ -8,7 +8,6 @@ import QRCode from "react-qr-code";
 import {IconCopy, IconPrinter} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
-import Image from "@tiptap/extension-image";
 
 interface AttendeeTicketProps {
     event: Event;
@@ -95,29 +94,24 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                 <div className={classes.sponsorBlock}>
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
+                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-huber.png"}/>
                         </div>
                     </div>
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
+                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-fact.png"}/>
                         </div>
                         <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
-                        </div>
-                        <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
+                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-bachliesl.png"}/>
                         </div>
                     </div>
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
+                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-innmotion.png"}/>
                         </div>
                         <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
-                        </div>
-                        <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://placehold.co/600x200/000000/FFF"}/>
+                            <img className={classes.sponsorImage}
+                                 src={"https://emahevents.de/sponsors/emah-peschl.png"}/>
                         </div>
                     </div>
                 </div>
