@@ -16,5 +16,5 @@ export const getAttendeeTicketPrice = (attendee: Attendee, ticket: Ticket): numb
     const ticketPrice = ticket.prices
         ?.find(price => price.id === attendee.ticket_price_id);
 
-    return ticketPrice?.price ?? 0;
+    return ticketPrice?.price_including_taxes_and_fees ?? 0;
 }

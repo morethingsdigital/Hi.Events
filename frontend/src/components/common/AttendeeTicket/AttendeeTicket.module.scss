@@ -121,4 +121,18 @@
       border: 1px solid #d1d1d1;
     }
   }
+
+  .sponsorImagesWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .sponsorImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-wrap: nowrap;
+  }
 }
