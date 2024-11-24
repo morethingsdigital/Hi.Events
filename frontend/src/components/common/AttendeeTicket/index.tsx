@@ -92,7 +92,7 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                 </div>
             </Card>
             <Card className={classes.attendee}>
-                <div>
+                <div className={classes.sponsorBlock}>
                     <h2>Mit freundlicher Unterstützung von:</h2>
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
