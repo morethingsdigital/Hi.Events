@@ -77,7 +77,7 @@ export const App: FC<
                         ],
                     },
                     primaryColor: "purple",
-                    fontFamily: "'Varela Round', sans-serif",
+                    fontFamily: "'Weissenhof Grotesk', sans-serif",
                 }}
             >
                 <HelmetProvider context={props.helmetContext}>

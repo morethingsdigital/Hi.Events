@@ -19,6 +19,7 @@ export const PublicEvent = () => {
                 promoCode={promoCode}
                 backgroundType={event?.settings?.homepage_background_type}
             />
+            <script defer data-domain="tickets.emahevents.de" src="https://plausible.io/js/script.js"></script>
         </>
     );
 };
