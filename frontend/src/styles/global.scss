@@ -1,5 +1,69 @@
 @import "mixins";
 
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-Light.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-LightItalic.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-Regular.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-Italic.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-Medium.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-MediumItalic.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-MediumItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-Bold.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Weissenhof Grotesk';
+  src: url('./../assets/fonts/WeissenhofGrotesk-BoldItalic.woff') format('woff'), url('./../assets/fonts/WeissenhofGrotesk-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --tk-text: #4b3b5d;
   --tk-primary: #472e78;
@@ -37,7 +101,7 @@ html {
 }
 
 body {
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Weissenhof Grotesk', sans-serif;
   color: var(--tk-text);
   background-color: var(--tk-color-gray) !important;
   height: auto;
