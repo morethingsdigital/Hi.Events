@@ -74,7 +74,7 @@ class StripePaymentIntentCreationService
                     'account_id' => $paymentIntentDTO->account->getId(),
                 ],
                 'automatic_payment_methods' => [
-                    'enabled' => true,
+                    'enabled' => false,
                 ],
                 $applicationFee ? ['application_fee_amount' => $applicationFee] : [],
             ], $this->getStripeAccountData($paymentIntentDTO));
