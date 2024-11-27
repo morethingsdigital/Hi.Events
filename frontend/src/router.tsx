@@ -12,7 +12,8 @@ const Root = () => {
     useEffect(() => {
         if (me.isFetched) {
             // TODO: This is hacky, i know
-            setRedirectPath(me.isSuccess ? "/manage/events" : "/auth/login");
+            setRedirectPath(me.isSuccess ? "/manage/events" : "/event/1/snow-sound-2024");
+            // setRedirectPath(me.isSuccess ? "/manage/events" : "/auth/login");
         }
     }, [me.isFetched]);
 
@@ -24,7 +25,7 @@ const Root = () => {
 export const router: RouteObject[] = [
     {
         path: "",
-        element: <Root/>,
+        element:<Navigate to="/event/1/snow-sound-2024" replace={true}/>,
         errorElement: <ErrorPage/>
     },
     {
@@ -35,6 +36,10 @@ export const router: RouteObject[] = [
         },
         errorElement: <ErrorPage/>,
         children: [
+            {
+                path: "",
+                element: <Navigate to="/auth/login" replace={true}/>
+            },
             {
                 path: "login",
                 async lazy() {
