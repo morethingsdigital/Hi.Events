@@ -66,14 +66,13 @@ class StripePaymentIntentCreationService
                 'amount' => $paymentIntentDTO->amount,
                 'currency' => 'eur',
                 'customer' => $this->upsertStripeCustomer($paymentIntentDTO)->getStripeCustomerId(),
-                'setup_future_usage' => 'on_session',
                 'metadata' => [
                     'order_id' => $paymentIntentDTO->order->getId(),
                     'event_id' => $paymentIntentDTO->order->getEventId(),
                     'order_short_id' => $paymentIntentDTO->order->getShortId(),
                     'account_id' => $paymentIntentDTO->account->getId(),
                 ],
-                'payment_method_types' => ['card', 'klarna', 'paypal', 'giropay', 'ideal', 'sofort'],
+                'payment_method_types' => ['card', 'paypal', 'klarna'],
                 $applicationFee ? ['application_fee_amount' => $applicationFee] : [],
             ], $this->getStripeAccountData($paymentIntentDTO));
 
