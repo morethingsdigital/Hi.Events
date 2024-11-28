@@ -58,7 +58,7 @@ api.interceptors.response.use(
         if (isAuthError && (!isAllowedUnauthenticatedPath || isManageEventPath)) {
             // Store the current URL before redirecting to the login page
             window?.localStorage?.setItem(PREVIOUS_URL_KEY, window?.location.href);
-            window?.location?.replace(LOGIN_PATH);
+            // window?.location?.replace(LOGIN_PATH);
         }
 
         return Promise.reject(error);
