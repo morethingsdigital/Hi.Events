@@ -64,18 +64,15 @@ class StripePaymentIntentCreationService
 
             $paymentIntent = $this->stripeClient->paymentIntents->create([
                 'amount' => $paymentIntentDTO->amount,
-                'currency' => $paymentIntentDTO->currencyCode,
+                'currency' => 'eur',
                 'customer' => $this->upsertStripeCustomer($paymentIntentDTO)->getStripeCustomerId(),
-                'setup_future_usage' => 'on_session',
                 'metadata' => [
                     'order_id' => $paymentIntentDTO->order->getId(),
                     'event_id' => $paymentIntentDTO->order->getEventId(),
                     'order_short_id' => $paymentIntentDTO->order->getShortId(),
                     'account_id' => $paymentIntentDTO->account->getId(),
                 ],
-                'automatic_payment_methods' => [
-                    'enabled' => true,
-                ],
+                'payment_method_types' => ['card', 'paypal', 'klarna'],
                 $applicationFee ? ['application_fee_amount' => $applicationFee] : [],
             ], $this->getStripeAccountData($paymentIntentDTO));
 
