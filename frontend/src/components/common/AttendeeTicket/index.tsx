@@ -5,6 +5,7 @@ import {formatCurrency} from "../../../utilites/currency.ts";
 import {t} from "@lingui/macro";
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
+import { QRCodeImage } from 'react-qrcode-image';
 import {IconCopy, IconPrinter, IconTicket} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
@@ -63,6 +64,10 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                             </div>
                         )}
                         {attendee.status !== 'CANCELLED' && <QRCode bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
+                        {attendee.status !== 'CANCELLED' && <QRCodeImage options={{
+                            content: String(attendee.public_id),
+                            width: 144,
+                        }}/>}
                     </div>
 
                     {!hideButtons && (
