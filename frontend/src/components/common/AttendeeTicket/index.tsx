@@ -5,7 +5,7 @@ import {formatCurrency} from "../../../utilites/currency.ts";
 import {t} from "@lingui/macro";
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
-import {IconCopy, IconPrinter, IconTicket} from "@tabler/icons-react";
+import {IconCopy, IconDownload, IconPrinter, IconTicket} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
 
@@ -123,8 +123,14 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                                 {t`Cancelled`}
                             </div>
                         )}
-                        {attendee.status !== 'CANCELLED' && <QRCode id={"qrcode"} bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
-                        {attendee.status !== 'CANCELLED' && <button onClick={() => downloadQR()}>Download</button> }
+                        <div>
+                            {attendee.status !== 'CANCELLED' && <QRCode id={"qrcode"} bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
+                        </div>
+                        <div>
+                            {attendee.status !== 'CANCELLED' && <Button variant={'transparent'} size={'sm'} onClick={downloadQR} leftSection={<IconDownload size={18}/> }>
+                                Download QR-Code
+                            </Button> }
+                        </div>
                     </div>
 
                     {!hideButtons && (
