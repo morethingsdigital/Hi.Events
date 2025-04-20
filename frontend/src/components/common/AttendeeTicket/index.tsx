@@ -16,26 +16,66 @@ interface AttendeeTicketProps {
     hideButtons?: boolean;
 }
 
-const downloadQR = () => {
-    const svg = document.getElementById("qrcode");
-    const svgData = new XMLSerializer().serializeToString(svg);
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
+const downloadQR = async () => {
+    const qr = document.getElementById("qrcode");
+    const svgData = new XMLSerializer().serializeToString(qr)
+    const canvas = document.createElement("canvas")
+    const ctx = canvas.getContext("2d")
     const img = new Image();
     img.onload = function () {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-        const pngFile = canvas.toDataURL("image/png");
+        canvas.width = img.width + 40;
+        canvas.height = img.height + 40;
 
+        const ctx = canvas.getContext("2d");
+
+        // White background
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Optional: Draw border
+        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the original image onto the canvas
+        ctx.drawImage(img, 20, 20);
+
+        // 🔥 Apply high-contrast filter to the canvas
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+
+            const brightness = 0.299 * r + 0.587 * g + 0.114 * b;
+            const color = brightness > 128 ? 255 : 0;
+
+            data[i] = color;     // R
+            data[i + 1] = color; // G
+            data[i + 2] = color; // B
+            // Alpha (data[i + 3]) stays the same
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+        // Convert canvas to PNG
+        const pngFile = canvas.toDataURL("image/png", 1.0);
+
+        // Create and click download link
         const downloadLink = document.createElement("a");
         downloadLink.download = "qrcode";
-        downloadLink.href = `${pngFile}`;
+        downloadLink.href = pngFile;
+        downloadLink.target = "_blank";
+        document.body.appendChild(downloadLink);
         downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+        downloadLink.remove();
     };
 
+// SVG to image
     img.src = "data:image/svg+xml;base64," + btoa(svgData);
-};
+}
 
 export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: AttendeeTicketProps) => {
     const ticketPrice = getAttendeeTicketPrice(attendee, ticket);
