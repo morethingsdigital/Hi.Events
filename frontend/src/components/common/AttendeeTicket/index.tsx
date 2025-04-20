@@ -5,7 +5,6 @@ import {formatCurrency} from "../../../utilites/currency.ts";
 import {t} from "@lingui/macro";
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
-import { QRCodeImage } from 'react-qrcode-image';
 import {IconCopy, IconPrinter, IconTicket} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
@@ -16,6 +15,27 @@ interface AttendeeTicketProps {
     ticket: Ticket;
     hideButtons?: boolean;
 }
+
+const downloadQR = () => {
+    const svg = document.getElementById("qrcode");
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
+    img.onload = function () {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        const pngFile = canvas.toDataURL("image/png");
+
+        const downloadLink = document.createElement("a");
+        downloadLink.download = "qrcode";
+        downloadLink.href = `${pngFile}`;
+        downloadLink.click();
+    };
+
+    img.src = "data:image/svg+xml;base64," + btoa(svgData);
+};
 
 export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: AttendeeTicketProps) => {
     const ticketPrice = getAttendeeTicketPrice(attendee, ticket);
@@ -63,11 +83,8 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                                 {t`Cancelled`}
                             </div>
                         )}
-                        {attendee.status !== 'CANCELLED' && <QRCode bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
-                        {attendee.status !== 'CANCELLED' && <QRCodeImage options={{
-                            content: String(attendee.public_id),
-                            width: 144,
-                        }}/>}
+                        {attendee.status !== 'CANCELLED' && <QRCode id={"qrcode"} bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
+                        {attendee.status !== 'CANCELLED' && <button onClick={() => downloadQR()}>Download</button> }
                     </div>
 
                     {!hideButtons && (

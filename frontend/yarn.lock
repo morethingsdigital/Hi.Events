@@ -2664,11 +2664,6 @@ es-errors@^1.3.0:
   resolved "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz"
   integrity sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==
 
-es6-promise@^4.2.4:
-  version "4.2.8"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
-  integrity sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==
-
 esbuild@^0.17.10:
   version "0.17.19"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.17.19.tgz"
@@ -4320,14 +4315,6 @@ punycode@^2.1.0:
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
   integrity sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==
 
-qr-code-with-logo@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/qr-code-with-logo/-/qr-code-with-logo-1.1.0.tgz#366869677561a435761468239c8716d04d2e07e4"
-  integrity sha512-lmBmhDFDwB+G2NhO5zrvmC6AhbVWAbwCqsyExoHrhl/MtaukccZ0KmDAZMx+Zolo7nnTbIMocyj49tU/HfEx+Q==
-  dependencies:
-    es6-promise "^4.2.4"
-    qrcode "^1.2.0"
-
 qr-scanner@^1.4.2:
   version "1.4.2"
   resolved "https://registry.npmjs.org/qr-scanner/-/qr-scanner-1.4.2.tgz"
@@ -4340,7 +4327,7 @@ qr.js@0.0.0:
   resolved "https://registry.npmjs.org/qr.js/-/qr.js-0.0.0.tgz"
   integrity sha512-c4iYnWb+k2E+vYpRimHqSu575b1/wKl4XFeJGpFmrJQz5I88v9aY2czh7s0w36srfCM1sXgC/xpoJz5dJfq+OQ==
 
-qrcode@^1.2.0:
+qrcode@^1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/qrcode/-/qrcode-1.5.4.tgz#5cb81d86eb57c675febb08cf007fff963405da88"
   integrity sha512-1ca71Zgiu6ORjHqFBDpnSMTR2ReToX4l1Au1VFLyVeBTFavzQnv5JxMFr3ukHVKpSrSA2MCk0lNJSykjUfz7Zg==
@@ -4449,14 +4436,6 @@ react-qr-code@^2.0.12:
     prop-types "^15.8.1"
     qr.js "0.0.0"
 
-react-qrcode-image@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-qrcode-image/-/react-qrcode-image-0.1.0.tgz#0e3b269c08b65277d87b96f79fe5ad0b6c47cecd"
-  integrity sha512-BapX+CrOibHcOcf0WUZfGgSJj1534kaIThHy0dfeTVM9jxsoJZA5DB0eIR9WSQgECwokaEp4MqpnuWw4Ieg8xw==
-  dependencies:
-    qr-code-with-logo "^1.1.0"
-    react "^16.13.1"
-
 react-refresh@^0.14.2:
   version "0.14.2"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz"
@@ -4531,15 +4510,6 @@ react-transition-group@4.4.5, react-transition-group@^4.4.5:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-
-react@^16.13.1:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
-  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^18.2.0:
