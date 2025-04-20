@@ -127,7 +127,7 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                             {attendee.status !== 'CANCELLED' && <QRCode id={"qrcode"} bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
                         </div>
                         <div>
-                            {attendee.status !== 'CANCELLED' && <Button variant={'transparent'} size={'sm'} onClick={downloadQR} leftSection={<IconDownload size={18}/> }>
+                            {attendee.status !== 'CANCELLED' && <Button variant={'transparent'} size={'sm'} onClick={downloadQR}>
                                 Download QR-Code
                             </Button> }
                         </div>
