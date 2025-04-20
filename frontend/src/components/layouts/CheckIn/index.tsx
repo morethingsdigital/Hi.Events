@@ -18,6 +18,7 @@ import {NoResultsSplash} from "../../common/NoResultsSplash";
 import {Countdown} from "../../common/Countdown";
 import Truncate from "../../common/Truncate";
 import {Header} from "../../common/Header";
+import axios from 'axios';
 
 const CheckIn = () => {
     const networkStatus = useNetwork();
@@ -83,6 +84,11 @@ const CheckIn = () => {
                         showError(errors[attendee.public_id]);
                         return;
                     }
+
+                    axios.post('https://visitors.emahevents.de/api/checkin')
+                        .catch((error) => {
+                            console.warn('Check-in counter API failed', error);
+                        });
 
                     showSuccess(<Trans>{attendee.first_name} <b>checked in</b> successfully</Trans>);
                 },
