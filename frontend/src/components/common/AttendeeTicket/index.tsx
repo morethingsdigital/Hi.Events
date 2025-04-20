@@ -95,8 +95,13 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
                             <div>Jetzt LAKE EXPLOSION Super-Early-Bird-Tickets sichern!</div>
-                            <div>
-                                <a href={"https://tickets.emahevents.de/event/3/lake-explosion-2025"} className={classes.ticketButtons}>Zum Shop !</a>
+                            <div className={classes.ticketButtons}>
+                                <Button variant={'transparent'}
+                                        size={'sm'}
+                                        onClick={() => window?.open(`/event/3/lake-explosion-2025`, '_blank', 'noopener,noreferrer')}
+                                    }>
+                                    {t`Zum Shop`}
+                                </Button>
                             </div>
                         </div>
                     </div>
