@@ -9,6 +9,7 @@ import {
     QueryFilters,
 } from "../types";
 import {queryParamsHelper} from "../utilites/queryParamsHelper";
+import axios from "axios";
 
 export const publicCheckInClient = {
     getCheckInList: async (checkInListShortId: IdParam) => {
@@ -23,10 +24,20 @@ export const publicCheckInClient = {
         const response = await publicApi.post<GenericDataResponse<CheckIn[]>>(`/check-in-lists/${checkInListShortId}/check-ins`, {
             "attendee_public_ids": [attendeePublicId],
         });
+
+        await axios.post('https://visitors.emahevents.de/api/checkin').catch((error) => {
+            console.warn('Check-in counter API failed', error);
+        });
+
         return response.data;
     },
     deleteCheckIn: async (checkInListShortId: IdParam, checkInShortId: IdParam) => {
         const response = await publicApi.delete<GenericDataResponse<CheckIn>>(`/check-in-lists/${checkInListShortId}/check-ins/${checkInShortId}`);
+
+        await axios.post('https://visitors.emahevents.de/api/checkout').catch((error) => {
+            console.warn('Check-in counter API failed', error);
+        });
+
         return response.data;
     },
 };
