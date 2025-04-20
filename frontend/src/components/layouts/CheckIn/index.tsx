@@ -85,11 +85,6 @@ const CheckIn = () => {
                         return;
                     }
 
-                    axios.post('https://visitors.emahevents.de/api/checkin')
-                        .catch((error) => {
-                            console.warn('Check-in counter API failed', error);
-                        });
-
                     showSuccess(<Trans>{attendee.first_name} <b>checked in</b> successfully</Trans>);
                 },
                 onError: (error) => {
