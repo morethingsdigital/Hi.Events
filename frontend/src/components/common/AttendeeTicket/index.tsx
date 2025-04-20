@@ -62,7 +62,7 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                                 {t`Cancelled`}
                             </div>
                         )}
-                        {attendee.status !== 'CANCELLED' && <QRCode value={String(attendee.public_id)}/>}
+                        {attendee.status !== 'CANCELLED' && <QRCode bgColor={'#ffffff'} fgColor={'#000000'} value={String(attendee.public_id)}/>}
                     </div>
 
                     {!hideButtons && (
