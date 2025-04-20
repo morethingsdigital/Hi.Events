@@ -101,7 +101,7 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                                         onClick={() => window?.open(`/event/3/lake-explosion-2025`, '_blank', 'noopener,noreferrer')}
                                         leftSection={<IconTicket size={18}/>
                                     }>
-                                    {t`Zum Shop`}
+                                    Zum Shop
                                 </Button>
                             </div>
                         </div>
