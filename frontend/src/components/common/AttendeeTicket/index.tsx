@@ -129,7 +129,7 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                         <div>
                             {attendee.status !== 'CANCELLED' &&
                                 <div className={classes.ticketButtons}>
-                                    <Button variant={'transparent'} size={'sm'} leftSection={<IconDownload size={18}/>} onClick={downloadQR}>
+                                    <Button variant={'transparent'} size={'sm'} leftSection={<IconTicket size={18}/>} onClick={downloadQR}>
                                         Download QR-Code
                                     </Button>
                                 </div>
