@@ -6,7 +6,6 @@ import {IconBulb, IconBulbOff, IconCameraRotate, IconVolume, IconVolumeOff, Icon
 import {Anchor, Button, Menu} from "@mantine/core";
 import {showError} from "../../../utilites/notifications.tsx";
 import {t, Trans} from "@lingui/macro";
-import axios from "axios";
 
 interface QRScannerComponentProps {
     onCheckIn: (attendeePublicId: string, onRequestComplete: (didSucceed: boolean) => void, onFailure: () => void) => void;
@@ -103,9 +102,6 @@ export const QRScannerComponent = (props: QRScannerComponentProps) => {
 
                         if (didSucceed) {
                             setIsScanSucceeded(true);
-                            axios.post('https://visitors.emahevents.de/api/checkin').catch((error) => {
-                                console.warn('Check-in counter API failed', error);
-                            });
                             setInterval(function () {
                                 setIsScanSucceeded(false);
                             }, 500);

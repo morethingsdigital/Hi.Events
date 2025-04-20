@@ -2,6 +2,7 @@
 
 namespace HiEvents\Http\Actions\Attendees;
 
+use GuzzleHttp\Client;
 use HiEvents\DomainObjects\EventDomainObject;
 use HiEvents\Exceptions\CannotCheckInException;
 use HiEvents\Http\Actions\BaseAction;
@@ -33,6 +34,8 @@ class CheckInAttendeeAction extends BaseAction
                 'checked_in_by_user_id' => $user->getId(),
                 'action' => $request->validated('action'),
             ]));
+            $client = new Client();
+            $response = $client->request('POST', 'https://visitors.emahevents.de/api/checkin');
         } catch (CannotCheckInException $e) {
             return $this->errorResponse($e->getMessage(), ResponseCodes::HTTP_CONFLICT);
         }
