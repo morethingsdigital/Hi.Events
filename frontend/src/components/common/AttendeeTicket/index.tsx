@@ -5,7 +5,7 @@ import {formatCurrency} from "../../../utilites/currency.ts";
 import {t} from "@lingui/macro";
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
-import {IconCopy, IconPrinter} from "@tabler/icons-react";
+import {IconCopy, IconPrinter, IconTicket} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
 
@@ -99,6 +99,7 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                                 <Button variant={'transparent'}
                                         size={'sm'}
                                         onClick={() => window?.open(`/event/3/lake-explosion-2025`, '_blank', 'noopener,noreferrer')}
+                                        leftSection={<IconTicket size={18}/>
                                     }>
                                     {t`Zum Shop`}
                                 </Button>
