@@ -94,24 +94,10 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                 <div className={classes.sponsorBlock}>
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-huber.png"}/>
-                        </div>
-                    </div>
-                    <div className={classes.sponsorImagesWrapper}>
-                        <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-fact.png"}/>
-                        </div>
-                        <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-bachliesl.png"}/>
-                        </div>
-                    </div>
-                    <div className={classes.sponsorImagesWrapper}>
-                        <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage} src={"https://emahevents.de/sponsors/emah-innmotion.png"}/>
-                        </div>
-                        <div className={classes.sponsorImageElement}>
-                            <img className={classes.sponsorImage}
-                                 src={"https://emahevents.de/sponsors/emah-peschl.png"}/>
+                            <div>Jetzt LAKE EXPLOSION Super-Early-Bird-Tickets sichern!</div>
+                            <div>
+                                <a href={"https://tickets.emahevents.de/event/3/lake-explosion-2025"} className={classes.ticketButtons}>Zum Shop !</a>
+                            </div>
                         </div>
                     </div>
                 </div>
