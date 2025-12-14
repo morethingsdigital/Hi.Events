@@ -5,7 +5,14 @@ import {formatCurrency} from "../../../utilites/currency.ts";
 import {t} from "@lingui/macro";
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
-import {IconBrandInstagram, IconCopy, IconDownload, IconPrinter, IconTicket} from "@tabler/icons-react";
+import {
+    IconBrandInstagram,
+    IconCopy,
+    IconDownload,
+    IconExternalLink,
+    IconPrinter,
+    IconTicket
+} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
 
@@ -173,7 +180,26 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                                         onClick={() => window?.open(`https://instagram.com/emahevents`, '_blank', 'noopener,noreferrer')}
                                         leftSection={<IconBrandInstagram size={18}/>
                                     }>
-                                    Zum Shop
+                                    @emahevents auf Instagram
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Card>
+
+            <Card className={classes.attendee}>
+                <div className={classes.sponsorBlock}>
+                    <div className={classes.sponsorImagesWrapper}>
+                        <div className={classes.sponsorImageElement}>
+                            <div>Wir verleihen auch Event-Equipment! Egal ob kleine Geburtstagsfeier oder großes Open-Air: Jetzt anfragen!</div>
+                            <div className={classes.ticketButtons}>
+                                <Button variant={'outline'}
+                                        size={'sm'}
+                                        onClick={() => window?.open(`https://emahevents.de/verleih`, '_blank', 'noopener,noreferrer')}
+                                        leftSection={<IconExternalLink size={18}/>
+                                        }>
+                                    Mehr erfahren
                                 </Button>
                             </div>
                         </div>
