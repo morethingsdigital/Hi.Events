@@ -5,7 +5,7 @@ import {formatCurrency} from "../../../utilites/currency.ts";
 import {t} from "@lingui/macro";
 import {prettyDate} from "../../../utilites/dates.ts";
 import QRCode from "react-qr-code";
-import {IconCopy, IconDownload, IconPrinter, IconTicket} from "@tabler/icons-react";
+import {IconBrandInstagram, IconCopy, IconDownload, IconPrinter, IconTicket} from "@tabler/icons-react";
 import {Attendee, Event, Ticket} from "../../../types.ts";
 import classes from './AttendeeTicket.module.scss';
 
@@ -166,12 +166,12 @@ export const AttendeeTicket = ({attendee, ticket, event, hideButtons = false}: A
                 <div className={classes.sponsorBlock}>
                     <div className={classes.sponsorImagesWrapper}>
                         <div className={classes.sponsorImageElement}>
-                            <div>Jetzt LAKE EXPLOSION Super-Early-Bird-Tickets sichern!</div>
+                            <div>Folge uns jetzt auf Instagram, um keine News zu verpassen!</div>
                             <div className={classes.ticketButtons}>
-                                <Button variant={'transparent'}
+                                <Button variant={'outline'}
                                         size={'sm'}
-                                        onClick={() => window?.open(`/event/3/lake-explosion-2025`, '_blank', 'noopener,noreferrer')}
-                                        leftSection={<IconTicket size={18}/>
+                                        onClick={() => window?.open(`https://instagram.com/emahevents`, '_blank', 'noopener,noreferrer')}
+                                        leftSection={<IconBrandInstagram size={18}/>
                                     }>
                                     Zum Shop
                                 </Button>
