@@ -108,6 +108,8 @@ use HiEvents\Http\Actions\Users\UpdateMeAction;
 use HiEvents\Http\Actions\Users\UpdateUserAction;
 use Illuminate\Routing\Router;
 
+use HiEvents\Http\Actions\Attendees\GetAttendeeTicketInfoActionPublic;
+
 /** @var Router|Router $router */
 $router = app()->get('router');
 
@@ -258,6 +260,7 @@ $router->prefix('/public')->group(
 
         // Attendees
         $router->get('/events/{event_id}/attendees/{attendee_short_id}', GetAttendeeActionPublic::class);
+        $router->get('/attendees/get-ticket-info/{attendee_public_id}', GetAttendeeTicketInfoActionPublic::class);
 
         // Promo codes
         $router->get('/events/{event_id}/promo-codes/{promo_code}', GetPromoCodePublic::class);
