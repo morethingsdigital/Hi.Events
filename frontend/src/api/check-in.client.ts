@@ -28,7 +28,7 @@ export const publicCheckInClient = {
 
         await axios.post('https://visitors.emahevents.de/api/checkin', {
             "attendee_public_ids": [attendeePublicId],
-            "checkin_data": response.data
+            "checkin_data": response.data.data
         }).catch((error) => {
             console.warn('Check-in counter API failed', error);
         });
